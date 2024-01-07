@@ -1,7 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { InjectManifest } = require('workbox-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
+const { InjectManifest } = require('workbox-webpack-plugin')
 const path = require('path');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
@@ -22,7 +23,8 @@ module.exports = () => {
         template: './index.html',
         title: 'Webpack Plugin'
       }),
-      new MiniCssExtractPlugin()
+      new MiniCssExtractPlugin(),
+      new WorkboxPlugin.GenerateSW()
     ],
     module: {
       rules: [
