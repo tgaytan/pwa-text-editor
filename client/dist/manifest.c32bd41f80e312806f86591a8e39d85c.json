@@ -38,5 +38,19 @@
   "start_url": "./",
   "description": "Just Another Text Editor, but also a PWA",
   "background_color": "#7eb4e2",
-  "theme_color": "#7eb4e2"
+  "theme_color": "#7eb4e2",
+  "screenshots": [
+    {
+      "src": "/Users/tgaytan/bootcamp/graded-assignments/19-Module-Challenge/pwa-text-editor/client/src/images/logo.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/Users/tgaytan/bootcamp/graded-assignments/19-Module-Challenge/pwa-text-editor/client/src/images/logo.png",
+      "type": "image/png",
+      "sizes": "720x540",
+      "form_factor": "wide"
+    }
+  ]
 }

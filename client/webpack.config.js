@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const WorkboxPlugin = require('workbox-webpack-plugin')
 const WebpackPwaManifest = require('webpack-pwa-manifest')
 const { InjectManifest } = require('workbox-webpack-plugin')
 const path = require('path');
@@ -29,11 +28,11 @@ module.exports = () => {
         swDest: 'service-worker.js'
       }),
       new WebpackPwaManifest({
-        "short_name": "JATE",
-        "name": "Just Another Text Editor",
-        "description": "Just Another Text Editor, but also a PWA",
-        "background_color": "#7eb4e2",
-        "theme_color": "#7eb4e2",
+        short_name: "JATE",
+        name: "Just Another Text Editor",
+        description: "Just Another Text Editor, but also a PWA",
+        background_color: "#7eb4e2",
+        theme_color: "#7eb4e2",
         start_url: "./",
         publicPath: "./",
         icons: [
@@ -41,6 +40,20 @@ module.exports = () => {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons")
+          },
+        ],
+        screenshots: [
+          {
+            src: "assets/icons/icon_512x512.3ca11a97eb7d90b61fc3db0f3c5dcdb6.png",
+            type: "image/png",
+            sizes: "512x512",
+            form_factor: "narrow"
+          },
+          {
+            src: "assets/icons/icon_512x512.3ca11a97eb7d90b61fc3db0f3c5dcdb6.png",
+            type: "image/png",
+            sizes: "512x512",
+            form_factor: "wide"
           }
         ]
       })
